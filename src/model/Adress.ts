@@ -1,6 +1,6 @@
 class Adress {
   constructor(
-    private id:string,
+    private id_user:string,
     private street: string,
     private complement: string | null = null,
     private neighbourhood: string,

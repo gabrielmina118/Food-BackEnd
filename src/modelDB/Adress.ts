@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 
+
 const adressSchema = new mongoose.Schema({
-  id: { type: mongoose.Schema.Types.ObjectId, ref: "users", required: true },
+  id_user: { type: mongoose.Schema.Types.ObjectId, ref: "users", required: true },
   street: { type: String },
   complement: { type: String },
   neighbourhood: { type: String },

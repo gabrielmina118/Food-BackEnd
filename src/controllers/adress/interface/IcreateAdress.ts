@@ -1,5 +1,5 @@
 export interface IcreateAdress {
-  id:string
+  id_user:string
   street: string;
   complement:string;
   neighbourhood: string;

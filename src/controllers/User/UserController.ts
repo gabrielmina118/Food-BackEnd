@@ -7,6 +7,19 @@ import { HashManager } from "../../service/HashManager";
 import { ICreateUser } from "./Interfaces/ICreateUser";
 
 class UserController {
+
+  public static async allUsers(req:Request,res:Response){
+    try {
+        const allUsers = await userDb.find()
+        res.status(200).send(allUsers)
+    } catch (error) {
+      if (error instanceof BaseError) {
+        res.status(error.statusCode).send({ message: error.message });
+      }
+    }
+  }
+ 
+
   public static async login(req: Request, res: Response) {
     try {
       const { email, password } = req.body;
@@ -84,7 +97,8 @@ class UserController {
       cpf: userMongoDB.cpf,
       hasAdress: userMongoDB.hasAdress,
     };
-
+    const token = Authenticator.generateToken(userMongoDB._id.toString())
+    
     userMongoDB.save((err: any) => {
       if (err) {
         res.status(500).send({ message: err.message });
@@ -92,6 +106,7 @@ class UserController {
         res.status(201).send({
           message: "successfully registered user",
           user: outPutDTO,
+          token
         });
       }
     });

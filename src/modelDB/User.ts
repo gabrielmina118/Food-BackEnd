@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   cpf: { type: String, unique: true },
   password: { type: String },
-  hasAdress: { type: Boolean },
+  hasAdress: { type: Boolean }
 });
 
 export const userDb = mongoose.model("users", userSchema);
