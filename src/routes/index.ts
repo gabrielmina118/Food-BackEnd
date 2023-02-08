@@ -1,7 +1,8 @@
-import express , {Express} from "express"
+import  {Express} from "express"
+import { adressRouter } from "./adressRouter"
 import { userRouter } from "./userRouter"
 
 const routes = (app:Express) =>{
-    app.use(userRouter)
+    app.use(userRouter,adressRouter)
 }
 export default routes
