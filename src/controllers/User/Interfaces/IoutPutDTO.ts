@@ -3,4 +3,5 @@ export interface IoutPutDTO {
   name: string;
   email: string;
   cpf:string;
+  hasAdress:Boolean
 }

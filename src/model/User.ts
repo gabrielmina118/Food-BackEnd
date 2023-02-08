@@ -4,7 +4,7 @@ class User {
     private email: string,
     private cpf: string,
     private password:string,
-    private hasAdres: boolean = false
+    private hasAdress: boolean = false
   ) {}
 
   public getName(): string {
@@ -20,7 +20,7 @@ class User {
     return this.password;
   }
   public getHashAdress(): boolean {
-    return this.hasAdres;
+    return this.hasAdress;
   }
 }
 export default User;
