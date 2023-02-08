@@ -1,6 +1,5 @@
 class User {
   constructor(
-    private id: string,
     private name: string,
     private email: string,
     private cpf: string,
@@ -8,9 +7,6 @@ class User {
     private hasAdres: boolean = false
   ) {}
 
-  public getId(): string {
-    return this.id;
-  }
   public getName(): string {
     return this.name;
   }

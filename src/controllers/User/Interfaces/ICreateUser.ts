@@ -1,5 +1,5 @@
 interface Type {
-  [key: string]: string | number;
+  [key: string]: string | number | boolean;
 };
 
 export interface ICreateUser extends Type {
